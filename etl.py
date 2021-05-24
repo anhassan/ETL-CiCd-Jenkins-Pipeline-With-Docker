@@ -48,7 +48,7 @@ data_columns_resequenced =  list(data_columns[1:-1]) + [data_columns[0]]
 customer_data_transformed = customer_data_transformed[data_columns_resequenced]
 
 #--------------------------------------------------LOAD PHASE-----------------------------------------------------------
-print("ETL terminated.....")
+print("ETL completed.....")
 customer_data_transformed.to_csv("/etl/data/{}.csv".format(FILE_NAME))
 
 
