@@ -45,6 +45,10 @@ docker run --name jenkins -d -p 8080:8080 -p 50000:50000
 # CI/CD Pipeline Design
 The pipeline design is fairly simple. The Jenkins CI server will keep on listening to the repository it is bind to. Whenever a new commit is made to the Jenkins bind repository, a job would be triggered. This job would result in building of a new docker image corresponding to the current commit. The latest image built will finally be pushed to Docker Hub. All this automation is done using a Jenkinsfile which contains the information about the bind SCM repository as well as the Docker Hub credentials and docker image details. The below diagram clarifies the workflow:
 
+<p align="center">
+  <img src="/assets/CiCdBlockDiagram.png" />
+</p>
+
 
 # Jenkins Pipeline
 In order to build a pipeline in Jenkins we would chose the pipeline option among all the options including Freestyle project, Muti-branch pipeline etc. Now, in order to make sure that Jenkins Server keeps on listening to the desired repository for changes, we would choose Poll SCM option in the Build Triggers section of the pipeline with `* * * * *` as the cron pattern in order to check for a change every single minute. In the Pipeline options, we would choose Pipeline script from SCM as the Definition, SCM as Git, add the repository URL, keep the branch specifier as empty and uncheck the Lightweight checkout option.  Finally we would add the DockerHub credentials using the Jenkins Credential Manager having an id of `dockerHubCredentials` which are red in the Jenkinsfile. The following screenshot below will explain the required options chosen:
