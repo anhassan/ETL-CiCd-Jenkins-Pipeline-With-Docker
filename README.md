@@ -57,9 +57,7 @@ In order to build a pipeline in Jenkins we would chose the pipeline option among
   <img src="/assets/BuildTriggers.png" />
 </p>
 
-<p align="center">
-  <img src="/assets/PipelineOptions.png" />
-</p>
+
 
 # Validating Pipeline & Extracting ETL Results
 The following steps would be used to verify the working of the pipeline and to fetch the results of the ETL.
