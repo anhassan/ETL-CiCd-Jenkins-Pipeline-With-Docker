@@ -53,6 +53,14 @@ The pipeline design is fairly simple. The Jenkins CI server will keep on listeni
 # Jenkins Pipeline
 In order to build a pipeline in Jenkins we would chose the pipeline option among all the options including Freestyle project, Muti-branch pipeline etc. Now, in order to make sure that Jenkins Server keeps on listening to the desired repository for changes, we would choose Poll SCM option in the Build Triggers section of the pipeline with `* * * * *` as the cron pattern in order to check for a change every single minute. In the Pipeline options, we would choose Pipeline script from SCM as the Definition, SCM as Git, add the repository URL, keep the branch specifier as empty and uncheck the Lightweight checkout option.  Finally we would add the DockerHub credentials using the Jenkins Credential Manager having an id of `dockerHubCredentials` which are red in the Jenkinsfile. The following screenshot below will explain the required options chosen:
 
+<p align="center">
+  <img src="/assets/BuildTriggers.png" />
+</p>
+
+<p align="center">
+  <img src="/assets/PipelineOptions.png" />
+</p>
+
 # Validating Pipeline & Extracting ETL Results
 The following steps would be used to verify the working of the pipeline and to fetch the results of the ETL.
 1. Pull the docker image created via the Jenkins pipeline using the following command:
