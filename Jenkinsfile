@@ -3,7 +3,7 @@ pipeline {
     environment {
         dockerId = 'anhassan94'
         dockerImageName = 'dockeretl'
-        dockerImageSnapshot = 'lt7'
+        dockerImageSnapshot = 'lt1'
         dockerImage = ''
         registry = "${dockerId}/${dockerImageName}:${dockerImageSnapshot}"
         registryCredential = 'dockerHubCredentials'
