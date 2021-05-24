@@ -13,7 +13,7 @@ However, things become really tricky when we want to spin up docker client withi
 2. Communicate with the docker daemon running on the host machine
 3. Establish a way to grant appropriate permission to the container so that it can talk to the docker daemon
 
-In order to perform the above steps we would require:
+In order to perform the above steps we would require to:
 
 1. Install a custom docker image of Jenkins using the Dockerfile below:
 ```docker
